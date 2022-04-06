@@ -1,5 +1,4 @@
 ﻿using System;
-using WarehouseService;
 
 namespace ST4_ImplementationExamples
 {
@@ -7,7 +6,6 @@ namespace ST4_ImplementationExamples
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
 
             //REST
             REST rest = new REST();

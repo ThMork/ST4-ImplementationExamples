@@ -3,9 +3,7 @@ using MQTTnet.Client;
 using MQTTnet.Client.Options;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace ST4_ImplementationExamples
@@ -33,6 +31,7 @@ namespace ST4_ImplementationExamples
                 .WithCleanSession(true)
                 .Build();
 
+            //the handlers of MQTTnet are very useful when working with an event-based communication
             //on established connection
             client.UseConnectedHandler(e =>
             {
@@ -81,15 +80,19 @@ namespace ST4_ImplementationExamples
         //runner
         public async Task RunExample()
         {
+            //connect and subscribe
             await Connect();
 
+            //json serializable object
             var msg = new MQTTMessage();
             msg.ProcessID = 9999;
-
-            Console.WriteLine("Jsonconvert: " + JsonConvert.SerializeObject(msg));
+            
+            //run publish
             await PublishOnTopic("emulator/operation", JsonConvert.SerializeObject(msg));
         }
     }
+
+    //class to serialize json objects
     public class MQTTMessage
     {
         public int ProcessID { get; set; }
