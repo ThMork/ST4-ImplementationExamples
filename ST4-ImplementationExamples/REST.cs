@@ -30,33 +30,24 @@ namespace ST4_ImplementationExamples
             var msg = new OperationMessage();
             msg.State = 1;
             msg.Programname = "MoveToAssemblyOperation";
-            var json = JsonConvert.SerializeObject(msg);
 
             //new request obj
             RestRequest putRequest = request;
+            putRequest.AddJsonBody(msg);//add body
+            putRequest.RequestFormat = DataFormat.Json;//define format
 
-            //add body
-            putRequest.AddJsonBody(msg);
-            
-            //define content format
-            putRequest.RequestFormat = DataFormat.Json;
-            
-
+            //PUT request
             var response = await client.PutAsync(putRequest);
             Console.WriteLine("PUT request response" + response.Content);
-
-            
         }
+
         //test status method
         public async void GetStatus()
         {
             //GET request
             RestResponse response = await client.GetAsync(request);
-
             Console.WriteLine("GET request response: " + response.Content);        
         }
-
-
     }
 
     //class to serialize json objects
