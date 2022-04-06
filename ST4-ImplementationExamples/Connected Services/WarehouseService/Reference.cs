@@ -5,6 +5,14 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
+
+//------------------
+// Note from ThMork:
+//------------------
+// Visual Studio will autogenerate this process, and uses svcutil.exe to do it.
+// You can use svcutil.exe externally as well for the same purpose, but it is limited to .NET.
+// There is a Java alternative called wsimport, which also helps you generate code to run methods through - within the Java environment.
 //------------------------------------------------------------------------------
 
 namespace WarehouseService
