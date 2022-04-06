@@ -6,7 +6,6 @@ namespace ST4_ImplementationExamples
     {
         static void Main(string[] args)
         {
-
             //REST
             REST rest = new REST();
             _ = rest.RunExample();

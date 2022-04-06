@@ -8,7 +8,6 @@ namespace ST4_ImplementationExamples
 {
     public class REST
     {
-        //construct
         public REST() 
         {
         }
@@ -60,9 +59,10 @@ namespace ST4_ImplementationExamples
 
     }
 
-    //class for json serialization
+    //class to serialize json objects
     public class OperationMessage
     {
+        //tag forces the name of the json attribute on serialization to the specified PropertyName
         [JsonProperty(PropertyName = "Program name")]
         public string Programname { get; set; }
         public int State { get; set; }

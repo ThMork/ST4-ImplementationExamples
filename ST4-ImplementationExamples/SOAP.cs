@@ -6,7 +6,6 @@ namespace ST4_ImplementationExamples
 {
     public class SOAP
     {
-        //construct
         public SOAP()
         {
         }
@@ -14,7 +13,7 @@ namespace ST4_ImplementationExamples
         //runner
         public async Task RunExample()
         {
-            //instatiate web service from 'Connected Services'
+            //instatiate web service from 'Connected Services' reference through Visual Studio tool
             var service = new EmulatorServiceClient();
 
             //print response of GetInventoryAsync()

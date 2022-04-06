@@ -10,7 +10,6 @@ namespace ST4_ImplementationExamples
 {
     public class MQTT
     {
-        //construct
         public MQTT()
         {
         }
@@ -22,7 +21,7 @@ namespace ST4_ImplementationExamples
 
         private async Task Connect()
         {
-            //init vars
+            //init MQTT vars
             factory = new MqttFactory();
             client = factory.CreateMqttClient();
             options = new MqttClientOptionsBuilder()
@@ -56,7 +55,7 @@ namespace ST4_ImplementationExamples
             await client.ConnectAsync(options);
         }
 
-        //subscribe method
+
         public async void SubscribeToTopic(string input)
         {
             //printout
