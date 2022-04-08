@@ -34,11 +34,12 @@ namespace ST4_ImplementationExamples
             //new request obj
             RestRequest putRequest = request;
             putRequest.AddJsonBody(msg);//add body
-            putRequest.RequestFormat = DataFormat.Json;//define format
+            //putRequest.RequestFormat = DataFormat.Json;//define format
+            //putRequest.Method = Method.Put;
 
             //PUT request
-            var response = await client.PutAsync(putRequest);
-            Console.WriteLine("PUT request response" + response.Content);
+            //var response = await client.PutAsync(putRequest);
+            //Console.WriteLine("PUT request response" + response.Content);
         }
 
         //test status method
